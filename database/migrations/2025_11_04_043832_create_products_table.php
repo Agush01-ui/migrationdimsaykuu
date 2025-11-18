@@ -19,6 +19,9 @@ return new class extends Migration
             $table->integer('stock')->default(0); // jumlah stok
             $table->string('image')->nullable(); // nama file gambar produk
             $table->boolean('is_active')->default(true); // status aktif/tidak
+            
+            $table->softDeletes(); // << WAJIB untuk Soft Delete
+            
             $table->timestamps(); // created_at dan updated_at otomatis
         });
     }
